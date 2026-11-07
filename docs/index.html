@@ -3,81 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scientific Calculator</title>
+  <title>SCal - Scientific Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="app">
-    <header class="topbar">
-      <div class="brand"><span class="brand-icon">∑</span><div><h1>Scientific Calculator</h1><p>Precision at your fingertips</p></div></div>
-      <div class="mode"><span id="modeLabel">DEG</span><button id="angleToggle" class="mode-btn" title="Switch degree/radian">DEG</button></div>
-    </header>
-
-    <section class="calculator">
-      <div class="display">
-        <div class="display-top"><span id="status">READY</span><button id="clearHistory" class="text-btn">Clear history</button></div>
-        <div id="expression" class="expression">0</div>
-        <div id="result" class="result">0</div>
+  <div class="wrap">
+    <div class="calc-box">
+      <div class="top-row">
+        <h1>SCal</h1>
+        <div class="angle-area">
+          <span id="modeLabel">DEG</span>
+          <button id="angleToggle" class="angle-btn">DEG</button>
+        </div>
       </div>
 
-      <div class="keypad">
-        <button class="key function" data-action="sin">sin</button>
-        <button class="key function" data-action="cos">cos</button>
-        <button class="key function" data-action="tan">tan</button>
-        <button class="key function" data-action="log">log</button>
-        <button class="key function" data-action="ln">ln</button>
-
-        <button class="key function" data-action="asin">sin⁻¹</button>
-        <button class="key function" data-action="acos">cos⁻¹</button>
-        <button class="key function" data-action="atan">tan⁻¹</button>
-        <button class="key function" data-action="sqrt">√</button>
-        <button class="key function" data-action="cbrt">∛</button>
-
-        <button class="key function" data-insert="(">(</button>
-        <button class="key function" data-insert=")">)</button>
-        <button class="key function" data-action="square">x²</button>
-        <button class="key function" data-action="cube">x³</button>
-        <button class="key function" data-action="factorial">x!</button>
-
-        <button class="key function" data-action="sinh">sinh</button>
-        <button class="key function" data-action="cosh">cosh</button>
-        <button class="key function" data-action="tanh">tanh</button>
-        <button class="key function" data-insert="π">π</button>
-        <button class="key function" data-insert="e">e</button>
-
-        <button class="key utility" data-command="clear">AC</button>
-        <button class="key utility" data-command="delete">DEL</button>
-        <button class="key function" data-action="percent">%</button>
-        <button class="key operator" data-insert="/">÷</button>
-        <button class="key operator" data-insert="*">×</button>
-
-        <button class="key number" data-insert="7">7</button>
-        <button class="key number" data-insert="8">8</button>
-        <button class="key number" data-insert="9">9</button>
-        <button class="key operator" data-insert="-">−</button>
-        <button class="key operator" data-insert="+">+</button>
-
-        <button class="key number" data-insert="4">4</button>
-        <button class="key number" data-insert="5">5</button>
-        <button class="key number" data-insert="6">6</button>
-        <button class="key number" data-insert=".">.</button>
-        <button class="key operator" data-insert="^">xʸ</button>
-
-        <button class="key number" data-insert="1">1</button>
-        <button class="key number" data-insert="2">2</button>
-        <button class="key number" data-insert="3">3</button>
-        <button class="key number" data-insert="0">0</button>
-        <button class="key equals" data-command="equals">=</button>
+      <div class="screen">
+        <div class="screen-bar">
+          <span id="status">READY</span>
+          <button id="clearHistory" class="link-btn">clear history</button>
+        </div>
+        <div id="expression" class="expr">0</div>
+        <div id="result" class="ans">0</div>
       </div>
-      <p class="hint">Tip: use your keyboard for numbers and operators. Enter calculates · Esc clears · Backspace deletes.</p>
-    </section>
 
-    <aside class="history-panel">
-      <div class="history-heading"><div><h2>Calculation history</h2><p>Your recent calculations</p></div><span class="history-mark">↺</span></div>
-      <div id="history" class="history-list"><div class="empty">Your calculations will appear here.</div></div>
-    </aside>
-    <footer>Scientific Calculator <span>•</span> Powered by JavaScript</footer>
-  </main>
+      <div class="btns">
+        <!-- row 1 - sci -->
+        <button class="b fn" data-action="sin">sin</button>
+        <button class="b fn" data-action="cos">cos</button>
+        <button class="b fn" data-action="tan">tan</button>
+        <button class="b fn" data-action="log">log</button>
+        <button class="b fn" data-action="ln">ln</button>
+
+        <!-- row 2 -->
+        <button class="b fn" data-action="asin">sin⁻¹</button>
+        <button class="b fn" data-action="acos">cos⁻¹</button>
+        <button class="b fn" data-action="atan">tan⁻¹</button>
+        <button class="b fn" data-action="sqrt">√</button>
+        <button class="b fn" data-action="cbrt">∛</button>
+
+        <!-- row 3 -->
+        <button class="b fn" data-insert="(">(</button>
+        <button class="b fn" data-insert=")">)</button>
+        <button class="b fn" data-action="square">x²</button>
+        <button class="b fn" data-action="cube">x³</button>
+        <button class="b fn" data-action="factorial">x!</button>
+
+        <!-- row 4 - hyp -->
+        <button class="b fn" data-action="sinh">sinh</button>
+        <button class="b fn" data-action="cosh">cosh</button>
+        <button class="b fn" data-action="tanh">tanh</button>
+        <button class="b fn" data-insert="π">π</button>
+        <button class="b fn" data-insert="e">e</button>
+
+        <!-- row 5 - util -->
+        <button class="b cl" data-command="clear">AC</button>
+        <button class="b del" data-command="delete">DEL</button>
+        <button class="b fn" data-action="percent">%</button>
+        <button class="b op" data-insert="/">÷</button>
+        <button class="b op" data-insert="*">×</button>
+
+        <!-- row 6 - nums -->
+        <button class="b num" data-insert="7">7</button>
+        <button class="b num" data-insert="8">8</button>
+        <button class="b num" data-insert="9">9</button>
+        <button class="b op" data-insert="-">−</button>
+        <button class="b op" data-insert="+">+</button>
+
+        <!-- row 7 -->
+        <button class="b num" data-insert="4">4</button>
+        <button class="b num" data-insert="5">5</button>
+        <button class="b num" data-insert="6">6</button>
+        <button class="b num" data-insert=".">.</button>
+        <button class="b op" data-insert="^">xʸ</button>
+
+        <!-- row 8 -->
+        <button class="b num" data-insert="1">1</button>
+        <button class="b num" data-insert="2">2</button>
+        <button class="b num" data-insert="3">3</button>
+        <button class="b num" data-insert="0">0</button>
+        <button class="b eq" data-command="equals">=</button>
+      </div>
+      <p class="tip">keyboard works too — enter = calculate, esc = clear, backspace = delete</p>
+    </div>
+
+    <div class="hist-box">
+      <div class="hist-top">
+        <h2>History</h2>
+        <span class="hist-icon">↺</span>
+      </div>
+      <div id="history" class="hist-list"><div class="empty">nothing here yet</div></div>
+    </div>
+  </div>
+
+  <footer>built by saurav</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
