@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon">∑</span><div><h1>Scientific Calculator</h1><p>Precision at your fingertips</p></div></div>
+      <div class="mode"><span id="modeLabel">DEG</span><button id="angleToggle" class="mode-btn" title="Switch degree/radian">DEG</button></div>
+    </header>
+
+    <section class="calculator">
+      <div class="display">
+        <div class="display-top"><span id="status">READY</span><button id="clearHistory" class="text-btn">Clear history</button></div>
+        <div id="expression" class="expression">0</div>
+        <div id="result" class="result">0</div>
+      </div>
+
+      <div class="keypad">
+        <button class="key function" data-action="sin">sin</button>
+        <button class="key function" data-action="cos">cos</button>
+        <button class="key function" data-action="tan">tan</button>
+        <button class="key function" data-action="log">log</button>
+        <button class="key function" data-action="ln">ln</button>
+
+        <button class="key function" data-action="asin">sin⁻¹</button>
+        <button class="key function" data-action="acos">cos⁻¹</button>
+        <button class="key function" data-action="atan">tan⁻¹</button>
+        <button class="key function" data-action="sqrt">√</button>
+        <button class="key function" data-action="cbrt">∛</button>
+
+        <button class="key function" data-insert="(">(</button>
+        <button class="key function" data-insert=")">)</button>
+        <button class="key function" data-action="square">x²</button>
+        <button class="key function" data-action="cube">x³</button>
+        <button class="key function" data-action="factorial">x!</button>
+
+        <button class="key function" data-action="sinh">sinh</button>
+        <button class="key function" data-action="cosh">cosh</button>
+        <button class="key function" data-action="tanh">tanh</button>
+        <button class="key function" data-insert="π">π</button>
+        <button class="key function" data-insert="e">e</button>
+
+        <button class="key utility" data-command="clear">AC</button>
+        <button class="key utility" data-command="delete">DEL</button>
+        <button class="key function" data-action="percent">%</button>
+        <button class="key operator" data-insert="/">÷</button>
+        <button class="key operator" data-insert="*">×</button>
+
+        <button class="key number" data-insert="7">7</button>
+        <button class="key number" data-insert="8">8</button>
+        <button class="key number" data-insert="9">9</button>
+        <button class="key operator" data-insert="-">−</button>
+        <button class="key operator" data-insert="+">+</button>
+
+        <button class="key number" data-insert="4">4</button>
+        <button class="key number" data-insert="5">5</button>
+        <button class="key number" data-insert="6">6</button>
+        <button class="key number" data-insert=".">.</button>
+        <button class="key operator" data-insert="^">xʸ</button>
+
+        <button class="key number" data-insert="1">1</button>
+        <button class="key number" data-insert="2">2</button>
+        <button class="key number" data-insert="3">3</button>
+        <button class="key number" data-insert="0">0</button>
+        <button class="key equals" data-command="equals">=</button>
+      </div>
+      <p class="hint">Tip: use your keyboard for numbers and operators. Enter calculates · Esc clears · Backspace deletes.</p>
+    </section>
+
+    <aside class="history-panel">
+      <div class="history-heading"><div><h2>Calculation history</h2><p>Your recent calculations</p></div><span class="history-mark">↺</span></div>
+      <div id="history" class="history-list"><div class="empty">Your calculations will appear here.</div></div>
+    </aside>
+    <footer>Scientific Calculator <span>•</span> C Backend Project</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
