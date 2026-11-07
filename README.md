@@ -25,7 +25,6 @@ gcc server.c -o calculator_server.exe -lws2_32 -lm
 calculator_server.exe
 ```
 
-Then open **http://localhost:8080** in your browser.
 
 ## Run on Linux
 ```bash
@@ -33,7 +32,6 @@ gcc server.c -o calculator_server -lm
 ./calculator_server
 ```
 
-Then open **http://localhost:8080**.
 
 Keep the terminal window running while using the website. Press Ctrl+C to stop the server.
 
